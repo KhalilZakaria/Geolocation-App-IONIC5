@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar>
+          <ion-title>géolocalisation</ion-title>
+            <ion-button slot="primary" (click)="proseslogout()"><ion-icon slot="end"  name="log-out"></ion-icon></ion-button>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content padding >
+    Bonjour {{username}}
+    <ion-item>
+        <ion-label>Région</ion-label>
+        <ion-select  NAME ="region" value="None" ok-text="Okay" cancel-text="Dismiss" [(ngModel)]="pos_region" onChange='Choix(this.form)'>
+          <ion-select-option value="Tanger-Tétouan-Al Hoceïma">Tanger-Tétouan-Al Hoceïma</ion-select-option>
+          <ion-select-option value="l'Oriental">l'Oriental</ion-select-option>
+          <ion-select-option value="Fès-Meknès">Fès-Meknès</ion-select-option>
+          <ion-select-option value="Rabat-Salé-Kénitra">Rabat-Salé-Kénitra</ion-select-option>
+          <ion-select-option value="Béni Mellal-Khénifra">Béni Mellal-Khénifra</ion-select-option>
+          <ion-select-option value="Casablanca-Settat">Casablanca-Settat</ion-select-option>
+          <ion-select-option value="Marrakech-Safi">Marrakech-Safi</ion-select-option>
+          <ion-select-option value="Drâa-Tafilalet">Drâa-Tafilalet</ion-select-option>
+          <ion-select-option value="Souss-Massa">Souss-Massa</ion-select-option>
+          <ion-select-option value="Guelmim-Oued Noun">Guelmim-Oued Noun</ion-select-option>
+          <ion-select-option value="Laâyoune-Sakia El Hamra">Laâyoune-Sakia El Hamra</ion-select-option>
+          <ion-select-option value="Dakhla-Oued Ed Dahab">Dakhla-Oued Ed Dahab</ion-select-option>
+        </ion-select>
+      </ion-item>
+     
+<ion-card>
+ <ion-card-content>
+   <ion-textarea type="text" placeholder="Ville" [(ngModel)]="pos_ville"></ion-textarea>
+   <ion-textarea type="text" placeholder="Nom du ieu" [(ngModel)]="pos_POI"></ion-textarea>
+  </ion-card-content>
+</ion-card>
+  <ion-button class="custom" shape="round" color="primary" (click)="GrabPosition()">afficher la géolocalisation</ion-button>
+<p>la longitude :</p> {{lon}}
+<p>la latitude  :</p> {{lat}}
+</ion-content>
